@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CodePelita RPL SMKSA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green-bright: #00e000;
+      --green-mid:    #00b300;
+      --green-dark:   #006600;
+      --white:        #ffffff;
+      --off-white:    #f7faf7;
+      --border:       #d4edda;
+      --text-main:    #0d2b0d;
+      --text-muted:   #5a7a5a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--white);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--white);
+      border-bottom: 2px solid var(--green-bright);
+      padding: 1.1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+
+    .header-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .header-title .code-part  { color: var(--green-bright); }
+    .header-title .pelita-part { color: var(--green-dark); }
+    .header-title .rest-part  { color: var(--text-muted); font-weight: 400; font-size: 1rem; margin-left: 0.5rem; }
+
+    /* ── HERO ── */
+    .hero-section {
+      background: var(--off-white);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-section img {
+      width: 180px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 24px rgba(0,180,0,0.13));
+      animation: floatLogo 4s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .hero-tagline {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+    }
+
+    /* ── MAIN / UNDER CONSTRUCTION ── */
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1rem;
+    }
+
+    .uc-card {
+      text-align: center;
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .uc-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      background: #e6ffe6;
+      border: 1px solid var(--green-bright);
+      padding: 0.3rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .uc-title {
+      font-size: clamp(2.6rem, 8vw, 4.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .uc-title span {
+      color: var(--green-bright);
+      -webkit-text-stroke: 1px var(--green-mid);
+    }
+
+    .uc-desc {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    /* progress bar dekoratif */
+    .uc-progress-wrap {
+      width: 100%;
+      height: 3px;
+      background: var(--border);
+      overflow: hidden;
+      margin: 0 auto 2rem;
+      max-width: 320px;
+    }
+
+    .uc-progress-bar {
+      height: 100%;
+      width: 60%;
+      background: linear-gradient(90deg, var(--green-bright), var(--green-dark));
+      animation: progressPulse 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes progressPulse {
+      0%   { width: 50%; }
+      100% { width: 75%; }
+    }
+
+    .uc-progress-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--off-white);
+      border-top: 2px solid var(--green-bright);
+      padding: 1.2rem 1rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    footer a {
+      color: var(--green-dark);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    footer a:hover { color: var(--green-bright); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .hero-section img { width: 130px; }
+      .uc-title { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <span class="header-title">
+        <span class="code-part">Code</span><span class="pelita-part">Pelita</span>
+        <span class="rest-part">RPL SMKSA</span>
+      </span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <img src="codepelita2.png" alt="Logo CodePelita" />
+    <span class="hero-tagline">Rekayasa Perangkat Lunak · SMKSA</span>
+  </section>
+
+  <!-- MAIN -->
+  <main>
+    <div class="uc-card">
+      <div class="uc-label">Status</div>
+      <h1 class="uc-title">Under<br><span>Construction</span></h1>
+      <p class="uc-desc">Webpage Masih Dalam Tahap Pengembangan</p>
+      <div class="uc-progress-wrap">
+        <div class="uc-progress-bar"></div>
+      </div>
+      <p class="uc-progress-label">Sedang dalam proses pembangunan…</p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Powered by <a href="https://www.rplsmksa.com" target="_blank" rel="noopener">www.rplsmksa.com</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+    </html>
